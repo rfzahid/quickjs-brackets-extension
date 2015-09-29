@@ -1,0 +1,21 @@
+{
+    "name": "brackets-h5ab-quickjs",
+    "title": "quickJS",
+    "version": "0.0.2",
+    "description": "Quickly insert JS and jQuery Snippets",
+    "homepage": "https://github.com/html5andblog/quickjs-brackets-extension",
+    "author": "Simon (HTML5andBeyond.com)",
+    "license": "MIT",
+    "categories":"snippets",
+    "keywords": [
+        "jquery",
+        "javascript"
+    ],
+    "files": [
+        "main.js",
+        "README.md"
+    ],
+    "engines": {
+        "brackets": ">=1.4.0"
+    }
+}
