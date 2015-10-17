@@ -107,6 +107,13 @@ define(function (require, exports, module) {
             editor.document.replaceRange('[].forEach.call(document.getElementsByClassName(/*Class*/), function(element){\nelement.addEventListener("click", function(){\n/* Function */\n});\n});', insertionPos);
         }
     }
+    function handlejsCSSText() {
+        var editor = EditorManager.getFocusedEditor();
+        if (editor) {
+            var insertionPos = editor.getCursorPos();
+            editor.document.replaceRange('var styleString = "cssproperty: value; cssproperty: value;";\ndocument.getElementById(/*ID*/).style.cssText = styleString;', insertionPos);
+        }
+    }
 
     var jQueryDocReadyID = "write.jQueryDocReady";
     var docReadyID = "write.docReady";
@@ -118,6 +125,7 @@ define(function (require, exports, module) {
     var jsSelfFuncID = "write.jsSelfFunc";
     var jsClickId = "write.jsClickId";
     var jsClickClass = "write.jsClickClass";
+    var jsCSSText = "write.jsCSSText";
     
     CommandManager.register("noConflict Doc Ready", jQueryDocReadyID, handlejQueryDocReady);
     CommandManager.register("Doc Ready", docReadyID, handleDocReady);
@@ -129,6 +137,7 @@ define(function (require, exports, module) {
     CommandManager.register("JS Anon Func", jsSelfFuncID, handlejsSelfFunc);
     CommandManager.register("JS ID Click Function", jsClickId, handlejsClickId);
     CommandManager.register("JS Class Click Function", jsClickClass, handlejsClickClass);
+    CommandManager.register("JS CSS Text (Multiple CSS Properties)", jsCSSText, handlejsCSSText);
     
     var menu = Menus.addMenu("quickJS", "quickJS.custom.menu");
     
@@ -143,5 +152,6 @@ define(function (require, exports, module) {
     menu.addMenuItem(jsSelfFuncID);
     menu.addMenuItem(jsClickId);
     menu.addMenuItem(jsClickClass);
+    menu.addMenuItem(jsCSSText);
 
 });
