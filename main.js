@@ -42,7 +42,7 @@ define(function (require, exports, module) {
 			var spaces = editor.getColOffset(editor.getCursorPos());
 			editor.document.replaceRange('jQuery(document).ready(function($){\n\n', editor.getCursorPos());
 			fixIndent(editor, spaces);
-			editor.document.replaceRange('};\n', editor.getCursorPos());
+			editor.document.replaceRange('});\n', editor.getCursorPos());
 		}
 	}
 
@@ -52,7 +52,7 @@ define(function (require, exports, module) {
 			var spaces = editor.getColOffset(editor.getCursorPos());
 			editor.document.replaceRange('$(document).ready(function($){\n\n', editor.getCursorPos());
 			fixIndent(editor, spaces);
-			editor.document.replaceRange('};\n', editor.getCursorPos());
+			editor.document.replaceRange('});\n', editor.getCursorPos());
 		}
 	}
 
@@ -62,7 +62,7 @@ define(function (require, exports, module) {
 			var spaces = editor.getColOffset(editor.getCursorPos());
 			editor.document.replaceRange('$(window).resize(function($){\n\n', editor.getCursorPos());
 			fixIndent(editor, spaces);
-			editor.document.replaceRange('};\n', editor.getCursorPos());
+			editor.document.replaceRange('});\n', editor.getCursorPos());
 		}
 	}
 
@@ -108,7 +108,7 @@ define(function (require, exports, module) {
 			fixIndent(editor, spaces + 4);
 			editor.document.replaceRange('/* Function */\n', editor.getCursorPos());
 			fixIndent(editor, spaces);
-			editor.document.replaceRange('};\n', editor.getCursorPos());
+			editor.document.replaceRange('});\n', editor.getCursorPos());
 		}
 	}
 
